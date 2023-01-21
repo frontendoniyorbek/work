@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const tabsParent = document.querySelector('.tabheader__items'),
     tabs = document.querySelectorAll('.tabheader__item'),
     tabsContent = document.querySelectorAll('.tabcontent'),
-    loader = document.querySelector('.loader'),
     moadalLoaderEl = document.querySelector('.moadal-loader')
 
   // Loader
@@ -47,24 +46,14 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 
   // Timer
-
-  const deadline = '2022-08-11'
-
+  const deadline = '2023-09-30'
   function getTimeRemaining(endtime) {
-    let days, hours, minutes, seconds
-    const timer = Date.parse(endtime) - Date.parse(new Date())
+    const timer = Date.parse(endtime) - Date.parse(new Date()),
 
-    if (timer <= 0) {
-      days = 0
-      hours = 0
-      minutes = 0
-      seconds = 0
-    } else {
-      days = Math.floor(timer / (1000 * 60 * 60 * 24))
-      hours = Math.floor((timer / (1000 * 60 * 60)) % 24)
-      minutes = Math.floor((timer / 1000 / 60) % 60)
+      days = Math.floor(timer / (1000 * 60 * 60 * 24)),
+      hours = Math.floor((timer / (1000 * 60 * 60)) % 24),
+      minutes = Math.floor((timer / 1000 / 60) % 60),
       seconds = Math.floor((timer / 1000) % 60)
-    }
 
     return { timer, days, hours, minutes, seconds }
   }
@@ -86,10 +75,8 @@ window.addEventListener('DOMContentLoaded', () => {
       timeInterval = setInterval(updatClock, 1000)
 
     updatClock()
-
     function updatClock() {
       const t = getTimeRemaining(endtime)
-
       days.innerHTML = getZero(t.days)
       hours.innerHTML = getZero(t.hours)
       minutes.innerHTML = getZero(t.minutes)
@@ -100,7 +87,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-
   setClock('.timer', deadline)
 
   // Modal
