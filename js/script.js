@@ -2,13 +2,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const tabsParent = document.querySelector('.tabheader__items'),
     tabs = document.querySelectorAll('.tabheader__item'),
     tabsContent = document.querySelectorAll('.tabcontent'),
-    loader = document.querySelector('.loader')
+    loader = document.querySelector('.loader'),
+    moadalLoaderEl = document.querySelector('.moadal-loader')
 
   // Loader
   setTimeout(() => {
-    loader.style.opacity = '0'
+    moadalLoaderEl.style.opacity = '0'
     setTimeout(() => {
-      loader.style.display = 'none'
+      moadalLoaderEl.style.display = 'none'
     }, 500)
   }, 2000)
 
