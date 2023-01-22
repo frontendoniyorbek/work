@@ -36,6 +36,7 @@ a {
   display: flex;
   transition: all .3s ease;
 }
+
 .lds-default {
   display: inline-block;
   position: relative;
