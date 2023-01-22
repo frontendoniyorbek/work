@@ -315,7 +315,7 @@ a {
 .bgc_blue {
   position: absolute;
   right: 0;
-  top: -155px;
+  top: -15.5rem;
   width: 50vw;
   height: 900px;
   background: rgba(146, 242, 255, 0.15);
@@ -324,14 +324,16 @@ a {
 
 .tabcontainer {
   display: flex;
-  width: 1130px;
+  max-width: 1130px;
+  width: 100%;
   margin: 0 auto;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
 .tabcontent {
-  width: 850px;
+  max-width: 850px;
+  width: 100%;
   position: relative;
 }
 
@@ -350,36 +352,37 @@ a {
   width: 100%;
   height: 100%;
   background: rgb(89, 70, 87, 0.5);
-  padding: 50px;
-  font-size: 24px;
+  padding: 5rem;
+  font-size: 2.4rem;
   font-weight: 300;
-  line-height: 36px;
+  line-height: 1.5;
   color: rgb(255, 255, 255, 0.6);
   border: 1px solid #fff;
 }
 
 .tabheader {
-  width: 280px;
-  padding: 35px 30px;
+  max-width: 280px;
+  width: 100%;
+  padding: 3.5rem 3rem;
   background-color: #938791;
 }
 
 .tabheader h3 {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .tabheader__items {
-  margin-top: 35px;
-  padding-left: 26px;
+  margin-top: 3.5rem;
+  padding-left: 2.6rem;
   border-left: 1px solid #000;
 }
 
 .tabheader__item {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 300;
-  margin-top: 10px;
+  margin-top: 1rem;
   color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: 0.3s all;
@@ -387,7 +390,7 @@ a {
 
 .tabheader__item_active {
   color: #000;
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
@@ -904,6 +907,25 @@ a {
 }
 
 
+@media screen and (max-width: 1180px){
+  .tabcontent__descr {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width:650px) {
+  .tabcontainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabheader {
+    width: 100%;
+    max-width: 640px;
+  }
+}
+
 @media screen and (max-width: 550px){
   .header__content h2 {
     font-size: 3rem;
@@ -913,6 +935,19 @@ a {
   .btn__group {
     width: 100%;
     height: 80%;
+  }
+
+  .preview {
+    padding-bottom: 5rem;
+  }
+
+  .tabcontent__descr {
+    padding: 2rem;
+    line-height: 1.2;
+  }
+
+  .tabheader {
+    padding: 2.5rem 2rem;
   }
 }
 
